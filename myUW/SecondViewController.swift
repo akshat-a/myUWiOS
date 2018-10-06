@@ -7,11 +7,21 @@
 //
 
 import UIKit
+import WebKit
 
 class SecondViewController: UIViewController {
 
+  @IBOutlet weak var webView: WKWebView!
+
+
+
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    if let url = URL(string: "https://www.microsoft.com") {
+      let request = URLRequest(url: url)
+      webView.load(request)
+    }
     // Do any additional setup after loading the view, typically from a nib.
   }
 
